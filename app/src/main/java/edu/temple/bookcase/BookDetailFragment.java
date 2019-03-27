@@ -112,7 +112,8 @@ public class BookDetailFragment extends Fragment {
 
     public void displayBook(String title){
         textView.setText(title);
-        textView.setTextSize(30);
+        textView.setTextSize(40);
+        textView.setPadding(5,50, 5, 5);
         /*switch(bookIndex){
             case 0: textView.setText("Cat in the Hat"); break;
             case 1: textView.setText("Green Eggs and Ham"); break;
