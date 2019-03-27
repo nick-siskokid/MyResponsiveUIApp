@@ -1,6 +1,7 @@
 package edu.temple.bookcase;
 
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements BookListFragment.
     FragmentManager fm;
     BookListFragment bookListFragment;
     BookDetailFragment bookDetailFragment;
+    ViewPagerFragment viewPagerFragment;
     ArrayList<String> bookList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,11 @@ public class MainActivity extends AppCompatActivity implements BookListFragment.
 
             fm.beginTransaction()
                     .replace(R.id.container2, bookDetailFragment)
+                    .commit();
+        }
+        else{
+            fm.beginTransaction()
+                    .replace(R.id.container1, viewPagerFragment.newInstance(bookList))
                     .commit();
         }
 

@@ -27,7 +27,7 @@ public class BookDetailFragment extends Fragment {
     TextView textView;
     View rootView;
     // TODO: Rename and change types of parameters
-    private int mParam1;
+    private String mParam1;
 
 
     //private OnFragmentInteractionListener mListener;
@@ -45,10 +45,10 @@ public class BookDetailFragment extends Fragment {
      * @return A new instance of fragment BookDetailFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BookDetailFragment newInstance(int param1) {
+    public static BookDetailFragment newInstance(String param1) {
         BookDetailFragment fragment = new BookDetailFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -57,7 +57,7 @@ public class BookDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getInt(ARG_PARAM1);
+            mParam1 = getArguments().getString(ARG_PARAM1);
         }
     }
 
