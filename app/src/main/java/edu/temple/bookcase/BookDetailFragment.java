@@ -109,9 +109,10 @@ public class BookDetailFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }*/
 
-    public void displayBook(int bookIndex){
-
-        switch(bookIndex){
+    public void displayBook(String title){
+        textView.setText(title);
+        textView.setTextSize(30);
+        /*switch(bookIndex){
             case 0: textView.setText("Cat in the Hat"); break;
             case 1: textView.setText("Green Eggs and Ham"); break;
             case 2: textView.setText("Fox in Socks"); break;
@@ -119,6 +120,6 @@ public class BookDetailFragment extends Fragment {
             case 4: textView.setText("The Foot Book"); break;
             case 5: textView.setText("The Lorax"); break;
             case 6: textView.setText("One Fish Two Fish"); break;
-        }
+        }*/
     }
 }

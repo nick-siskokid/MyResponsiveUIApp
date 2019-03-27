@@ -36,11 +36,13 @@ public class MainActivity extends AppCompatActivity implements BookListFragment.
 
         fm = getSupportFragmentManager();
 
-        fm.beginTransaction()
-                .add(R.id.container1, new BookListFragment())
-                .commit();
+
 
         if(!landscape){
+            fm.beginTransaction()
+                    .add(R.id.container1, bookListFragment)
+                    .commit();
+
             fm.beginTransaction()
                     .replace(R.id.container2, bookDetailFragment)
                     .commit();
@@ -48,9 +50,9 @@ public class MainActivity extends AppCompatActivity implements BookListFragment.
 
     }
 
-    public void bookClicked(int position){
+    public void bookClicked(String title){
         if(!landscape){
-            bookDetailFragment.displayBook(position);
+            bookDetailFragment.displayBook(title);
         }
     }
 }

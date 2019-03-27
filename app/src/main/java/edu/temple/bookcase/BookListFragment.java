@@ -71,7 +71,7 @@ public class BookListFragment extends Fragment {
         listView = rootView.findViewById(R.id.listOfBooksView);
 
         //initialize arrayList of book names
-        bookList = new ArrayList<String>();
+        /*bookList = new ArrayList<String>();
         bookList.add("Cat in the Hat");
         bookList.add("Green Eggs and Ham");
         bookList.add("Fox in Socks");
@@ -79,13 +79,13 @@ public class BookListFragment extends Fragment {
         bookList.add("The Foot Book");
         bookList.add("The Lorax");
         bookList.add("One Fish Two Fish");
-
+        */
         //set array adapter to listView with bookList as the ArrayList to populate the ListView object
-        listView.setAdapter(new ArrayAdapter<>(parent, android.R.layout.simple_list_item_1, bookList));
+        listView.setAdapter(new ArrayAdapter<>(parent, android.R.layout.simple_list_item_1, mParam1));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parentView, View view, int position, long id) {
-                ((BookClickedInterface) parent).bookClicked(position);
+                ((BookClickedInterface) parent).bookClicked(mParam1.get(position));
             }
         });
 
@@ -129,6 +129,6 @@ public class BookListFragment extends Fragment {
      */
     public interface BookClickedInterface {
         // TODO: Update argument type and name
-        void bookClicked(int position);
+        void bookClicked(String title);
     }
 }
